@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Protected Page</title>
+    <style>
+        #content {
+            display: none; /* Hide content by default */
+        }
+    </style>
+</head>
+<body>
+    <h2>as this site is in development it needs a password so beta testers can get in and unauthorized people cant/h2>
+    <input type="password" id="passwordInput" placeholder="Enter password">
+    <button onclick="checkPassword()">Submit</button>
+
+    <div id="content">
+        <h3>finns games</h3>
+        <p>a colection of player made games</p>
+        <!-- Add more content here -->
+    </div>
+
+    <script>
+        function checkPassword() {
+            const correctPassword = "UNKownKKpaSS"; // Set your password here
+            const enteredPassword = document.getElementById("passwordInput").value;
+
+            if (enteredPassword === correctPassword) {
+                document.getElementById("content").style.display = "block"; // Show content
+                document.querySelector('h2').style.display = "none"; // Hide password prompt
+                document.getElementById("passwordInput").style.display = "none";
+                document.querySelector('button').style.display = "none";
+            } else {
+                alert("Incorrect password. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
